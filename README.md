@@ -1,4 +1,4 @@
-# README
+# Base Rails App
 
 This is a new, empty, Rails 5 app for use as a base for your next build. It
 comes packaged with:
@@ -19,9 +19,10 @@ comes packaged with:
 - Dotenv (for development env variables)
 - rails_12_factor for Heroku
 
-## Quick start
-You will need to clone the app, cd into the folder, remove git, bundle, 
-rename the app and then reset git pointing it to your new remote...
+## HOW TO GET STARTED
+You will need to clone the app, cd into the folder, remove git, run bundle, 
+rename the app and then reset git pointing it to your new remote. Once that is
+done you can begin developing your amazing new app...
 
 ```
 git clone git@github.com:tommotaylor/base_rails_app.git
@@ -31,7 +32,7 @@ bundle install
 rails g rename:app_to NEW_NAME
 ```
 
-## Once renamed
+### Once renamed
 You'll need to `cd` out of your app directory and then back into the newly
 renamed folder. You will also need to manually rename a few things:
 - the `<title>` in `app/views/layouts/application.html.erb`
@@ -47,29 +48,26 @@ git remote add origin git@github.com:YOUR_NEW_REMOTE_NAME
 git push -u origin master
 ```
 
-Create database
+### Now check its all working
+You should now be able to create your database and spin up the server to check 
+its all working:
 ```
 rake db:create
 rake db:migrate
-```
-
-For testing
-```
-rspec
-```
-
-For Simplecov
-```
-COV=1 rspec
-```
-
-For Rubocop
-```
-cop -D
-```
-
-For development
-```
 rails s
-# open your browser on http://localhost:3000
 ```
+
+## TESTING
+
+Tested using [RSpec](http://rspec.info/). In the app directory run `rspec` to 
+test the entire application.
+
+## CODE COVERAGE
+
+Run the test suite with the environmental variable `COV=1` eg: `COV=1 rspec` to 
+trigger [SimpleCov](https://github.com/colszowka/simplecov) for coverage testing.
+
+## CODE STYLE
+
+Code style enforced using [Rubocop](https://github.com/bbatsov/rubocop) to test
+the code base run `cop -D` from the terminal.
