@@ -1,0 +1,10 @@
+/.bundle
+/vendor/bundle
+/node_modules
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/coverage
+/public/uploads
+.env.development
